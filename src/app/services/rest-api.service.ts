@@ -41,5 +41,23 @@ export class RestApiService {
         catchError(this.handleError)
       )
   }
+
+  // HttpClient API delete() method => delete empleado
+  deleteCita(id: any) {
+    return this.http.delete<Cita>(this.apiURL + '/citas/' + id, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+  // HttpClient API post() method => Crear empleado
+  createCita(cita: any): Observable<Cita> {
+    return this.http.post<Cita>(this.apiURL + '/citas', JSON.stringify(cita), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
 }
 

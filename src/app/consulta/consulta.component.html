@@ -27,7 +27,7 @@
                         <td>{{cita.fecha}}</td>
                         <td>
                             <span class="edit" routerLink="/edicion/{{cita.id}}">Editar</span>
-                            <span class="delete">Eliminar</span>
+                            <span class="delete" (click)="deleteCita(cita.id)">Eliminar</span>
                         </td>
                     </tr>
                 </tbody>

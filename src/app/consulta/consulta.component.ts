@@ -23,4 +23,12 @@ export class ConsultaComponent implements OnInit {
       this.citas = data;
     })
   }
+  // Borrar un empleado
+  deleteCita(id: any) {
+    if (window.confirm('Está seguro que desea eliminar el dato?')) {
+      this.restApi.deleteCita(id).subscribe(data => {
+        this.getCitas()
+      })
+    }
+  }
 }
