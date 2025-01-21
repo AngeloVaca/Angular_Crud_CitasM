@@ -1,1 +1,37 @@
-<p>consulta works!</p>
+<div class="container custom-container-2">
+    <!-- Se muestra cuando no existen empleados -->
+    <div class="no-data text-center">
+        <button class="btn btn-outline-primary" routerLink="/creacion">Crear cita</button>
+    </div>
+    <!-- Tabla de empleados, se oculta cuando no existen registros -->
+    <div *ngIf="citas.length !== 0">
+        <h3 class="mb-3 text-center">Lista de Citas</h3>
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id cita</th>
+                        <th scope="col">Doctor</th>
+                        <th scope="col">lugar Cita</th>
+                        <th scope="col">hora</th>
+                        <th scope="col">fecha</th>
+                        <th scope="col">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cita of citas">
+                        <td>{{cita.id}}</td>
+                        <td>{{cita.doctor}}</td>
+                        <td>{{cita.lugarCita}}</td>
+                        <td>{{cita.hora}}</td>
+                        <td>{{cita.fecha}}</td>
+                        <td>
+                            <span class="edit" routerLink="/edicion/{{cita.id}}">Editar</span>
+                            <span class="delete">Eliminar</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

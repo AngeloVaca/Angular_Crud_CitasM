@@ -1,0 +1,26 @@
+{
+    "citas": [
+      {
+        "id": 1,
+        "doctor": "Antonio Estevez",
+        "lugarCita": "Consultorio 1",
+        "hora": "10:00 AM",
+        "fecha": "2025-01-21"
+      },
+      {
+        "id": 2,
+        "doctor": "Antonio Estevez",
+        "lugarCita": "Consultorio 1",
+        "hora": "11:00 AM",
+        "fecha": "2025-01-21"
+      },
+      {
+        "id": 3,
+        "doctor": "Blanca Salazar",
+        "lugarCita": "Consultorio 2",
+        "hora": "2:00 PM",
+        "fecha": "2025-01-21"
+      }
+    ]
+  }
+  
