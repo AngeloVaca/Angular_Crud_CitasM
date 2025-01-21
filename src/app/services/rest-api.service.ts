@@ -59,5 +59,22 @@ export class RestApiService {
         catchError(this.handleError)
       )
   }
+
+  // HttpClient API get() method => Consulta un empleado
+  getCita(id: string): Observable<Cita> {
+    return this.http.get<Cita>(this.apiURL + '/citas/' + id)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+  // HttpClient API put() method => Actualiza un empleado
+  updateCita(id: string, cita: any): Observable<Cita> {
+    return this.http.put<Cita>(this.apiURL + '/citas/' + id, JSON.stringify(cita), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
 }
 
